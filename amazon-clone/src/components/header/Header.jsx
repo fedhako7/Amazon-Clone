@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { BsCart3 } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import LowerHeader from './LowerHeader';
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -42,18 +43,18 @@ function Header() {
                         <option value="">EN</option>
                     </select>
                 </div>
-                <a href="">
+                <Link to="/auth">
                     <p>Sign In</p>
                     <span>Account and Lists</span>
-                </a>
-                <a href="">
+                </Link>
+                <Link to="/orders">
                     <p>Return</p>
                     <span>& Orders</span>
-                </a>
-                <a href="" className={classes.cart}>
+                </Link>
+                <Link to="/carts" className={classes.cart}>
                     <BsCart3 size={35}/>
                     <span>0</span>
-                </a>
+                </Link>
             </div>
         </div>
     </section>

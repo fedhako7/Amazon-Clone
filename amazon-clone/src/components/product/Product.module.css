@@ -52,3 +52,34 @@
 .products__container section{
     margin: 0 auto;
 }
+
+.product__flexed{
+    box-shadow: none;
+    /* height: auto; */
+    height: 50vh;
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+.product__flexed h3{
+    padding: 20px 0;
+}
+.product__flexed .button{
+    display: block;
+    position: static;
+    width: 150px;
+    margin-right: 40px;
+}
+.product__flexed img{
+    width: 300px !important;
+    height: auto;
+}
+
+@media screen and (max-width: 760px) {
+    .product__flexed{
+        
+        display: flex;
+        flex-direction: column;
+    }
+    
+}
