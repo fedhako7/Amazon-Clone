@@ -55,8 +55,8 @@
 
 .product__flexed{
     box-shadow: none;
-    /* height: auto; */
-    height: 50vh;
+    /* height: 50vh; */
+    height: auto;
     display: flex;
     gap: 50px;
     width: 100%;

@@ -4,7 +4,7 @@ import LayOut from '../../components/layOut/LayOut'
 function Orders() {
   return (
     <LayOut>
-        <div>Orders</div>
+      <div>Orders</div>
     </LayOut>
   )
 }

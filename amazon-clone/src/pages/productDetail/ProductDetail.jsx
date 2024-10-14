@@ -15,28 +15,28 @@ function ProductDetail() {
   useEffect(() => {
     setIsLoading(true)
     axios.get(`${productUrl}/products/${productId}`)
-    .then((res) => {
-      console.log(res.data);
-      setIsLoading(false)
-      setProduct(res.data);
-    }).catch((err) => {
-      console.log(err)
-      setIsLoading(false)
-    })
+      .then((res) => {
+        console.log(res.data);
+        setIsLoading(false)
+        setProduct(res.data);
+      }).catch((err) => {
+        console.log(err)
+        setIsLoading(false)
+      })
   }, [])
 
   return (
     <LayOut>
-        {
-          isLoading?(<Loader/>):
+      {
+        isLoading ? (<Loader />) :
           (<div>
-            <ProductCard 
-            product={product}
-            flex={true}
-            productDesc={true}
+            <ProductCard
+              product={product}
+              flex={true}
+              productDesc={true}
             />
           </div>)
-        }
+      }
     </LayOut>
   )
 }

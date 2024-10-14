@@ -1,16 +1,14 @@
-.hero__image{
+.hero__image {
     position: relative;
 }
 
-.hero__image::before{
+.hero__image::before {
     content: "";
     position: absolute;
     width: 100%;
     height: 300px;
     bottom: 0;
-    background-image: linear-gradient(
-        to bottom,
-        rgb(225, 225, 225, 0),
-        rgb(255, 255, 255)
-    );
+    background-image: linear-gradient(to bottom,
+            rgb(225, 225, 225, 0),
+            rgb(255, 255, 255));
 }

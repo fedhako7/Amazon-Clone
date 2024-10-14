@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../header/Header';
 
-function LayOut({children}) {
+function LayOut({ children }) {
   return (
     <div>
-        <Header />
-        {children}
-        
+      <Header />
+      {children}
+
     </div>
   )
 }

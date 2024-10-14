@@ -2,7 +2,12 @@
     margin: 0;
     padding: 0;
 }
-
+.fixed{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+}
 .header__container{
     background-color: #1a1a1a;
     display: flex;
@@ -10,6 +15,7 @@
     height: 70px;
     gap: 10px;
     align-items: center;
+    width: 100%;
 }
 
 .logo__container{

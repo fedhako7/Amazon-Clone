@@ -7,9 +7,9 @@ import CorouselEffect from '../../components/corousel/CorouselEffect'
 function Landing() {
   return (
     <LayOut>
-        <CorouselEffect />
-        <Category />
-        <Product />
+      <CorouselEffect />
+      <Category />
+      <Product />
     </LayOut>
   )
 }
