@@ -6,10 +6,11 @@ import { CiLocationOn } from "react-icons/ci";
 import LowerHeader from './LowerHeader';
 import { Link } from 'react-router-dom';
 import { dataContext } from '../../dataProvider/DataProvider';
+import { auth } from '../../Utilities/firebase';
 
 
 function Header() {
-    const [{ basket }, dispatch] = useContext(dataContext)
+    const [{ user, basket }, dispatch] = useContext(dataContext)
     const totalItem = basket?.reduce((amount, item) => {
         return item.amount + amount
     }, 0)
@@ -40,7 +41,7 @@ function Header() {
                                 <option value="">All</option>
                             </select>
                             <input type="text" placeholder='Search product' />
-                            <FaSearch />
+                            <FaSearch size={28}/>
                         </div>
                         {/* order */}
                         <div className={classes.order__container}>
@@ -50,9 +51,15 @@ function Header() {
                                     <option value="">EN</option>
                                 </select>
                             </div>
-                            <Link to="/auth">
-                                <p>Sign In</p>
-                                <span>Account and Lists</span>
+                            <Link to={!user && "/auth"}>
+                                {user ? <>
+                                    <p>Hello, {user.email.split("@")[0]}</p>
+                                    <span onClick={() => auth.signOut()}>Sign Out</span></> :
+                                    <>
+                                        <p>Hello, Sign In</p>
+                                        <span>Account and Lists</span>
+                                    </>
+                                }
                             </Link>
                             <Link to="/orders">
                                 <p>Return</p>
