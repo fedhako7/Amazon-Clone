@@ -4,8 +4,9 @@ import "firebase/compat/firestore"
 import "firebase/compat/auth"
 
 
+API_KEY = process.env.CLONE_APP_API_KEY;
 const firebaseConfig = {
-  apiKey: "AIzaSyDahodgyIBeaLwQF759rDM568JRGWAXmNw",
+  apiKey: API_KEY,
   authDomain: "clone-2e637.firebaseapp.com",
   projectId: "clone-2e637",
   storageBucket: "clone-2e637.appspot.com",
