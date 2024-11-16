@@ -13,6 +13,8 @@
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
     "@mui/material": "^6.1.2",
+    "@stripe/react-stripe-js": "^2.8.1",
+    "@stripe/stripe-js": "^4.8.0",
     "axios": "^1.7.7",
     "firebase": "^10.14.1",
     "numeral": "^2.0.6",

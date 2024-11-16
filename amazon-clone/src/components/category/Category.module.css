@@ -1,6 +1,6 @@
 .category{
-    height: 3z50px;
-    width: 3z50px;
+    height: 350px;
+    width: 350px;
     background-color: white;
     box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
 }
@@ -24,14 +24,16 @@
     font-size: 12px;
     font-weight: bold;
     color: rgb(9, 132, 209);
-
 }
 
 .categoryList{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin-left: 80px;
+    margin-right: 80px;
     margin-top: -10px;
     place-items: center;
     position: relative;
+    gap: 20px;
 
 }

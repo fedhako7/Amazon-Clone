@@ -16,11 +16,10 @@ function ProductDetail() {
     setIsLoading(true)
     axios.get(`${productUrl}/products/${productId}`)
       .then((res) => {
-        console.log(res.data);
         setIsLoading(false)
         setProduct(res.data);
       }).catch((err) => {
-        console.log(err)
+        console.log(err.message)
         setIsLoading(false)
       })
   }, [])

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import classes from './Auth.module.css'
 import { auth } from "../../Utilities/firebase.js"
 import {signInWithEmailAndPassword as SIGN, createUserWithEmailAndPassword as CREATE
@@ -21,6 +21,7 @@ function SignUp() {
     }
   )
   const navigate = useNavigate()
+  const navStateData = useLocation()
 
 
   const authHandler = async (e) => {
@@ -29,18 +30,17 @@ function SignUp() {
       setIsLoading({ ...isLoading, signIn: true })
       SIGN(auth, email, password)
         .then((userInfo) => {
-          console.log(userInfo)
           dispatch({
             type: Types.SET_USER,
             user: userInfo.user
           })
           setIsLoading({ ...isLoading, signIn: false })
-          navigate('/')
+          navigate(navStateData?.state?.redirect || '/')
 
 
         }).catch((err) => {
-          setError(err.message)
-          console.log(err)
+          setError(err)
+          console.log(err.message)
           setIsLoading({ ...isLoading, signIn: false })
 
         })
@@ -49,15 +49,15 @@ function SignUp() {
       setIsLoading({ ...isLoading, signUp: true })
       CREATE(auth, email, password)
         .then((userInfo) => {
-          console.log(userInfo)
           dispatch({
             type: Types.SET_USER,
             user: userInfo.user
           })
           setIsLoading({ ...isLoading, signUp: false })
+          navigate(navStateData?.state?.direct || '/')
         }).catch((err) => {
-          setError(err.message)
-          console.log(err)
+          setError(err)
+          console.log(err.message)
           setIsLoading({ ...isLoading, signUp: false })
 
         })
@@ -76,6 +76,17 @@ function SignUp() {
       </Link>
       <div className={classes.login__container}>
         <h1>Sign In</h1>
+        {
+          navStateData?.state?.msg &&
+          <small style={{
+            padding:'5px',
+            textAlign: 'center',
+            color:'red',
+            fontWeight:'bold'
+          }}>
+            {navStateData.state.msg}
+          </small>
+        }
         <form action="">
           <div>
             <label htmlFor="email">Email</label>

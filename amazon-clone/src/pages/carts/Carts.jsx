@@ -51,7 +51,7 @@ function Carts() {
                   <section className={classes.cart__product}>
                     <ProductCard
                       product={item}
-                      key={i}
+                      key={item.id}
                       productDesc={true}
                       flex={true}
                       buttonInvisible={true}

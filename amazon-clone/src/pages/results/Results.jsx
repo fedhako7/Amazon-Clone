@@ -38,7 +38,6 @@ function Results() {
           <hr />
           <div className={classes.products__container}>
             {results?.map((product) => {
-              console.log(product);
               return (
                 <ProductCard
                   product={product}

@@ -1,0 +1,31 @@
+.container{
+    background-color: #efeeee;
+    padding: 30px;
+}
+.orders__container{
+    background-color: #fff;
+    padding: 20px;
+}
+
+.orders__container h2{
+    border-bottom: 2px solid var(--primary-shade);
+    padding: 20px;
+}
+
+.orders__container p{
+    padding: 12px;
+    font-weight: bold;
+}
+.orders__container p span{
+    color:chocolate;
+    font-style: italic;
+    
+}
+
+.orders__container img{
+    width: 100px !important;
+}
+
+.orders__container div {
+    height: auto !important;
+}

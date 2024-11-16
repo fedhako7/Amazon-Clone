@@ -16,7 +16,7 @@ function Product() {
                 setProducts(res.data);
                 setIsLoading(false)
             }).catch((err) => {
-                console.log("error", err);
+                console.log(err.message);
                 setIsLoading(false)
             })
     }, []);
