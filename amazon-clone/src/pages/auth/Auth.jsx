@@ -39,7 +39,7 @@ function SignUp() {
 
 
         }).catch((err) => {
-          setError(err)
+          setError(err.message)
           console.log(err.message)
           setIsLoading({ ...isLoading, signIn: false })
 
@@ -56,7 +56,7 @@ function SignUp() {
           setIsLoading({ ...isLoading, signUp: false })
           navigate(navStateData?.state?.direct || '/')
         }).catch((err) => {
-          setError(err)
+          setError(err.message)
           console.log(err.message)
           setIsLoading({ ...isLoading, signUp: false })
 
